@@ -5,6 +5,10 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
     cy.visit('/') // Executa antes de cada teste
   })
 
+  afterEach(() => {
+    cy.screenshot()
+  });   
+
  context('Cenários positivos', () => {
   it('Deve fazer o cadastro de campos obrigatórios', () => {
     var email = `baden${Date.now()}@teste.com`
