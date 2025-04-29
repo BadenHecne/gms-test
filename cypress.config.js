@@ -12,8 +12,8 @@ module.exports = defineConfig({
       reportDir: 'cypress/reports',
       overwrite: false,
       html: false,
-      json: true,
-      video: true 
+      json: true, 
+      video: true,
     },
     //browser: 'edge', // Define o navegador padrão como Microsoft Edge
   },
