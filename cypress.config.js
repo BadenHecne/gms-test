@@ -7,7 +7,17 @@ module.exports = defineConfig({
     },
     //baseUrl: 'http://127.0.0.1:8081',
     baseUrl: 'https://golden-movie-studio.vercel.app/',
-    video: true // Ativa a gravação de vídeo
+    reporter: 'mochawesome', // Define o Mochawesome como reporter
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: false,
+      json: true,
+      video: true 
+    },
     //browser: 'edge', // Define o navegador padrão como Microsoft Edge
   },
 });
+
+
+

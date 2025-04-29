@@ -2,12 +2,28 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            browser: firefox
+            browser: chrome
+
+      - name: Merge Mochawesome reports
+        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+
+      - name: Generate HTML report
+        run: npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-html-report
+          path: cypress/reports/html      
             
