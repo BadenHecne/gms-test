@@ -13,8 +13,8 @@ module.exports = defineConfig({
       overwrite: false,
       html: false,
       json: true, 
-      video: true,
     },
+     video: true,
     //browser: 'edge', // Define o navegador padrão como Microsoft Edge
   },
 });

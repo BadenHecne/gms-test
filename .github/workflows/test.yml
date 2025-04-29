@@ -15,6 +15,9 @@ jobs:
         with:
             browser: chrome
 
+      - name: List Mochawesome JSON reports
+        run: dir cypress/reports      
+
       - name: Merge Mochawesome reports
         run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
 
@@ -22,7 +25,7 @@ jobs:
         run: npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-html-report
           path: cypress/reports/html      
