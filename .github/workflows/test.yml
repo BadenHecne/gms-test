@@ -22,7 +22,7 @@ jobs:
         run: npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.0.0
         with:
           name: cypress-html-report
           path: cypress/reports/html      
