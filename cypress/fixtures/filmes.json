@@ -1,0 +1,24 @@
+[
+   {
+        "titulo" : "Matrix",
+        "ano" : 1999,
+        "descricao": "Um programador de computador descobre que a realidade que conhece é uma simulação criada por máquinas."
+   },
+   {
+        "titulo" : "Batman",
+        "ano" : 2008,
+        "descricao": "Um vigilante mascarado luta contra o crime em Gotham City."
+   },
+   {
+        "titulo" : "Inception",
+        "ano" : 2010,
+        "descricao": "Um ladrão especializado em extrair segredos do subconsciente é contratado para realizar um roubo."
+    },
+    {
+        "titulo" : "The Lord of the Rings",
+        "ano" : 2001,
+        "descricao": "Um hobbit embarca em uma jornada épica para destruir um anel poderoso."
+    }
+
+    
+]
