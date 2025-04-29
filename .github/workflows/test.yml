@@ -2,12 +2,12 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            browser: edge
+            browser: safari
             
