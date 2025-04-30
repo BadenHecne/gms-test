@@ -3,10 +3,10 @@
 describe('US-012-Funcionalidade: Cadastro de membros', () => {
   beforeEach(() => {
     cy.visit('/') // Executa antes de cada teste
-  })
+  });
 
-  afterEach(() => {
-    cy.screenshot()
+  afterEach(() =>{
+    //cy.screenshot();
   });   
 
  context('Cenários positivos', () => {
