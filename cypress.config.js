@@ -7,12 +7,10 @@ module.exports = defineConfig({
     },
     //baseUrl: 'http://127.0.0.1:8081',
     baseUrl: 'https://golden-movie-studio.vercel.app/',
-    reporter: 'mochawesome', // Define o Mochawesome como reporter
+    reporter: 'junit', // Define o JUnit como reporter
     reporterOptions: {
-      reportDir: 'cypress/reports',
-      overwrite: false,
-      html: false,
-      json: true, 
+      mochaFile: 'cypress/reports/junit-[hash].xml', // Diretório para salvar os relatórios XML
+      toConsole: true,
     },
      video: true,
     //browser: 'edge', // Define o navegador padrão como Microsoft Edge

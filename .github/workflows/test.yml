@@ -18,18 +18,14 @@ jobs:
         with:
             browser: chrome
 
-      - name: List Mochawesome JSON reports
-        run: dir cypress/reports      
+      - name: Install JUnit Viewer
+        run: npm install -g junit-viewer
 
-      - name: Merge Mochawesome reports
-        run: npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
-
-      - name: Generate HTML report
-        run: npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
+      - name: Convert JUnit XML to HTML
+        run: junit-viewer --results=cypress/reports --save=cypress/reports/report.html
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v3
         with:
           name: cypress-html-report
-          path: cypress/reports/html      
-            
+          path: cypress/reports/report.html

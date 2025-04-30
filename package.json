@@ -19,10 +19,5 @@
   "homepage": "https://github.com/BadenHecne/gms-test#readme",
   "dependencies": {
     "cypress": "^14.3.2"
-  },
-  "devDependencies": {
-    "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^5.0.0",
-    "mochawesome-report-generator": "^6.2.0"
   }
 }
