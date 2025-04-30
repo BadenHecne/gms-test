@@ -13,16 +13,12 @@ jobs:
       - name: Ensure reports directory exists
         run: mkdir -p cypress/reports  
 
-      - name: Cypress run
+      - name: Run Cypress tests with Dashboard
         uses: cypress-io/github-action@v6
         with:
             browser: chrome
+            record: true
+            key: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-      - name: Install JUnit Viewer
-        run: npm install -g junit-viewer
-
-      - name: Convert JUnit XML to HTML
-        run: junit-viewer --results=cypress/reports --save=cypress/reports/report.html
-
-      - name: Display HTML report
-        run: cat cypress/reports/report.html      
+      - name: Display Cypress Dashboard link
+        run: echo "Check the Cypress Dashboard for detailed test results."    

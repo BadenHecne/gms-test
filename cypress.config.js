@@ -7,14 +7,16 @@ module.exports = defineConfig({
     },
     //baseUrl: 'http://127.0.0.1:8081',
     baseUrl: 'https://golden-movie-studio.vercel.app/',
-    reporter: 'junit', // Define o JUnit como reporter
-    reporterOptions: {
-      mochaFile: 'cypress/reports/junit-[hash].xml', // Diretório para salvar os relatórios XML
-      toConsole: true,
+    projectId: 'seu-project-id', // Substitua pelo ID do projeto fornecido pelo Cypress Dashboard
+    video: true,
+    //reporter: 'junit', // Define o JUnit como reporter
+    //reporterOptions: {
+      //mochaFile: 'cypress/reports/junit-[hash].xml', // Diretório para salvar os relatórios XML
+      //toConsole: true,
     },
-     video: true,
+     //video: true,
     //browser: 'edge', // Define o navegador padrão como Microsoft Edge
-  },
+  //},
 });
 
 
