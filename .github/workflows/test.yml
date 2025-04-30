@@ -17,15 +17,3 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
             browser: chrome
-
-      - name: Install JUnit Viewer
-        run: npm install -g junit-viewer
-
-      - name: Convert JUnit XML to HTML
-        run: junit-viewer --results=cypress/reports --save=cypress/reports/report.html
-
-      - name: Upload HTML report
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-html-report
-          path: cypress/reports/report.html
