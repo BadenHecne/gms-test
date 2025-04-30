@@ -11,25 +11,18 @@ jobs:
         run: npm ci
 
       - name: Ensure reports directory exists
-        #run: mkdir -p cypress/reports  
-        run: if not exist cypress\reports mkdir cypress\reports
+        run: mkdir -p cypress/reports  
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-            browser: chrome
+            browser: chrome      
 
-      - name: List Mochawesome reports
-        run: dir cypress\reports
+      - name: Install JUnit Viewer
+        run: npm install -g junit-viewer
 
-      - name: Display HTML report in logs
-        run: type cypress\reports\mochawesome.html      
+      - name: Convert JUnit XML to HTML
+        run: junit-viewer --results=cypress/reports --save=cypress/reports/report.html
 
-      #- name: Install JUnit Viewer
-      #  run: npm install -g junit-viewer
-
-      #- name: Convert JUnit XML to HTML
-      #  run: junit-viewer --results=cypress/reports --save=cypress/reports/report.html
-
-      #- name: Display HTML report
-      #  run: cat cypress/reports/report.html      
+      - name: Display HTML report
+        run: cat cypress/reports/report.html      
