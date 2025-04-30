@@ -2,7 +2,7 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
         run: npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-html-report
           path: cypress/reports/html      
